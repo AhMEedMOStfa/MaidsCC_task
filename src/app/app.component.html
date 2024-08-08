@@ -1,0 +1,12 @@
+<router-outlet></router-outlet>
+@if (loadingService.loading()) {
+<div
+  class="fixed z-[9999] top-0 start-0 end-0 bottom-0 flex items-center justify-center"
+>
+  <p-progressSpinner
+    strokeWidth="4"
+    styleClass="w-20 h-20"
+    ariaLabel="loading"
+  ></p-progressSpinner>
+</div>
+}

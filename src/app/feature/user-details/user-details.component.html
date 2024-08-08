@@ -1,0 +1,42 @@
+<button
+  type="button"
+  (click)="goBack()"
+  class="bg-blue-500 text-white rounded-md m-4 py-2 px-4"
+>
+  <div class="flex items-center gap-x-2">
+    <i class="pi pi-arrow-left text-sm"></i>
+    <span> back </span>
+  </div>
+</button>
+@if (userDetails$ | async ; as userDetails) {
+<div class="container mx-auto mt-4" appAnimate animationName="fadeIn">
+  <div
+    class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
+  >
+    <div class="md:flex">
+      <div class="md:shrink-0">
+        <img
+          class="h-48 w-full object-cover md:h-full md:w-48"
+          [src]="userDetails.avatar"
+          alt="User Avatar"
+        />
+      </div>
+      <div class="p-8 flex flex-col gap-y-5">
+        <p class="uppercase tracking-wide text-indigo-500 text-lg font-medium">
+          User ID: {{ userDetails.id }}
+        </p>
+        <p class="tracking-wide text-indigo-500 text-lg font-medium">
+          Mail : {{ userDetails.email }}
+        </p>
+        <p class="text-lg font-medium text-black">
+          First Name : {{ userDetails.first_name }}
+        </p>
+        <p class="text-lg font-medium text-black">
+          Last Name : {{ userDetails.last_name }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+}

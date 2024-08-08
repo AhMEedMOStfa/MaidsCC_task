@@ -1,0 +1,28 @@
+<app-header (searchTermChanged)="onSearch($event)"></app-header>
+<div
+  class="mx-24 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+>
+  @for (user of users$ | async; track $index) {
+  <app-user-card
+    [user]="user"
+    appAnimate
+    animationName="fadeIn"
+  ></app-user-card>
+  } @empty { @if (!isloading()) {
+  <p class="text-xl">There is no data for this id</p>
+  } }
+</div>
+<div class="flex justify-center items-center">
+  @if (isloading()) {
+  <p-progressSpinner styleClass="w-20 h-20" strokeWidth="4"></p-progressSpinner>
+  }
+</div>
+@if (paginationPayload.total) {
+<p-paginator
+  (onPageChange)="onPageChange($event)"
+  [first]="1"
+  [rows]="paginationPayload.per_page"
+  [totalRecords]="paginationPayload.total"
+  [showFirstLastIcon]="false"
+/>
+}

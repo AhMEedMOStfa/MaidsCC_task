@@ -1,0 +1,14 @@
+<div class="text-white text-xl font-bold">maids.CC</div>
+<div class="flex flex-col gap-y-2">
+  <input
+    type="text"
+    class="p-2"
+    pInputText
+    placeholder="Search user by Id"
+    [formControl]="searchTermControl"
+  />
+  @if (searchTermControl.invalid && (searchTermControl.touched ||
+  searchTermControl.dirty)) { @if (searchTermControl.errors?.['pattern']) {
+  <p class="text-sm text-white">please enter valid UserID</p>
+  } }
+</div>

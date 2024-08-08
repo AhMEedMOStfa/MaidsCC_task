@@ -1,0 +1,16 @@
+<div
+  class="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white cursor-pointer focus:translate-y-0 hover:translate-y-[-2px] transition-transform duration-200"
+  [routerLink]="'/user-details/' + user().id"
+>
+  <img
+    class="w-full h-32 object-cover"
+    [src]="user().avatar"
+    alt="User Avatar"
+  />
+  <div class="py-4">
+    <div class="font-bold mb-2 w-max text-base">
+      {{ user().first_name }} {{ user().last_name }}
+    </div>
+    <p class="text-gray-700 text-base">ID: {{ user().id }}</p>
+  </div>
+</div>

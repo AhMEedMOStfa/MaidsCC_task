@@ -1,0 +1,19 @@
+.p-paginator {
+    background: theme("colors.transparent");
+    column-gap: 1.4rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: nowrap;
+    .p-paginator-pages {
+        display: flex;
+      .p-paginator-page.p-highlight {
+        background: skyblue;
+        color: white;
+        border-radius: 6px;
+      }
+    }
+    .p-paginator-prev,
+    .p-paginator-next {
+      border-radius: 6px;
+    }
+  }
