@@ -16,9 +16,6 @@ import { debounceTime, filter, fromEvent } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'bg-blue-500 p-4 flex items-center justify-between',
-  },
 })
 export class HeaderComponent implements OnInit {
   searchTermChanged = output<string>();
